@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.funaihui.lollitechandroid.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.funaihui.lollitechandroid.MyBundle
 
 class MyApplicationService {
 
