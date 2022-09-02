@@ -1,18 +1,25 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.funaihui.lollitechandroid</id>
-    <name>lollitech-android</name>
-    <vendor>funaihui</vendor>
+    <id>com.lollitech.lollitechandroid</id>
+    <name>android-template</name>
+    <vendor>符乃辉</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.funaihui.lollitechandroid.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.funaihui.lollitechandroid.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.lollitech.lollitechandroid.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.lollitech.lollitechandroid.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.funaihui.lollitechandroid.listeners.MyProjectManagerListener"
+        <listener class="com.lollitech.lollitechandroid.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="other.mvvm.SamplePluginTemplateProviderImpl" />
+    </extensions>
 </idea-plugin>

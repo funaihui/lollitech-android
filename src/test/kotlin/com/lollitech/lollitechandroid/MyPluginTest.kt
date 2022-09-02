@@ -1,4 +1,4 @@
-package com.github.funaihui.lollitechandroid
+package com.lollitech.lollitechandroid
 
 import com.intellij.ide.highlighter.XmlFileType
 import com.intellij.psi.xml.XmlFile
