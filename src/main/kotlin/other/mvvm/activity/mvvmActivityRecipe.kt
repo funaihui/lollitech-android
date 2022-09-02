@@ -1,11 +1,10 @@
 package other.mvvm.activity
 
-import com.android.tools.idea.npw.module.recipes.generateManifest
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
-import other.mvvm.activity.src.app_package.mvvmAcitivityKt
-import other.mvvm.activity.src.res.layout.mvvmActivityXml
-import other.mvvm.fragment.res.layout.mvvmFragmentXml
+import com.android.tools.idea.wizard.template.impl.activities.common.generateManifest
+import other.mvvm.activity.src.app_package.mvvmActivityKt
+import other.mvvm.activity.res.layout.mvvmActivityXml
 
 /**
  * Copyright (c) 2022, Lollitech
@@ -37,11 +36,21 @@ fun RecipeExecutor.mvvmActivityRecipe(
 //        """.trimIndent()
 //    )
 
-    val mvvmActivity = mvvmAcitivityKt(projectData.applicationPackage, activityClass, packageName)
+//    generateManifest(
+//        moduleData = moduleData,
+//        activityClass = "",
+//        packageName = "",
+//        isLauncher = false,
+//        activityThemeName = "",
+//        hasNoActionBar = false,
+//        generateActivityTitle = false,
+//    )
+
+    val mvvmActivity = mvvmActivityKt(activityClass, packageName, layoutName)
     // 保存Activity
     save(mvvmActivity, srcOut.resolve("${activityClass}Activity.${ktOrJavaExt}"))
     // 保存xml
-    save(mvvmActivityXml(packageName, activityClass), resOut.resolve("layout/${layoutName}.xml"))
+    save(mvvmActivityXml(), resOut.resolve("layout/${layoutName}.xml"))
     // 保存viewmodel
 //    save(mvvmViewModel(packageName, activityClass), srcOut.resolve("${activityClass}ViewModel.${ktOrJavaExt}"))
     // 保存repository

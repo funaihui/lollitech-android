@@ -31,12 +31,11 @@ fun RecipeExecutor.mvvmFragmentRecipe(
 //            useMaterial2 = false
 //    )
 
-    val mvvmFragment = mvvmFragmentKt(projectData.applicationPackage, fragmentClass, packageName)
-    // 保存Activity
+    val mvvmFragment = mvvmFragmentKt(fragmentClass, packageName,layoutName)
+    // 保存Fragment
     save(mvvmFragment, srcOut.resolve("${fragmentClass}Fragment.${ktOrJavaExt}"))
-    // TODO: 2022/9/1 符乃辉  LayoutName待完善
     // 保存xml
-    save(mvvmFragmentXml(packageName, fragmentClass), resOut.resolve("layout/${layoutName}.xml"))
+    save(mvvmFragmentXml(), resOut.resolve("layout/${layoutName}.xml"))
     // 保存viewmodel
 //    save(mvvmViewModel(packageName, activityClass), srcOut.resolve("${activityClass}ViewModel.${ktOrJavaExt}"))
     // 保存repository

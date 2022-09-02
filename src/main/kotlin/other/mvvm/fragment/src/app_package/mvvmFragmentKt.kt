@@ -1,21 +1,17 @@
 package other.mvvm.fragment.src.app_package
 
+import other.mvvm.util.layoutName2Binding
+
 /**
  * Copyright (c) 2022, Lollitech
  * All rights reserved
  * author: funaihui@lollitech.com
  * describe:
  **/
-fun mvvmFragmentKt(
-    applicationPackage: String?,
-    activityClass: String,
-    packageName: String
-) = """
+fun mvvmFragmentKt(fragmentClass: String, packageName: String, layoutName: String) = """
 package $packageName
 import android.os.Bundle
-import com.lollitech.common.ui.BaseFragment
-import ${applicationPackage}.databinding.Fragment${activityClass}Binding
-class ${activityClass}Fragment : BaseFragment<Fragment${activityClass}Binding>() {
+class ${fragmentClass}Fragment : BaseFragment<${layoutName2Binding(layoutName)}Binding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
     

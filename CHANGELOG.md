@@ -3,5 +3,7 @@
 # lollitech-android Changelog
 
 ## [Unreleased]
+
 ### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
+- 修复ViewBinding生成错误的问题
